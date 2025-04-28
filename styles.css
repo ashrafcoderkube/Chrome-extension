@@ -1,0 +1,135 @@
+/* Modernized styles.css */
+#tone-adjuster-popup {
+  position: absolute;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  padding: 16px;
+  display: none;
+  animation: popupFadeIn 0.3s ease;
+}
+
+@keyframes popupFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#tone-adjuster-popup.visible {
+  display: block;
+}
+
+.tone-adjuster-header {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.tone-adjuster-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.tone-adjuster-buttons button {
+  flex: 1 1 45%;
+  padding: 10px 12px;
+  background: #f0f2f5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.tone-adjuster-buttons button:hover {
+  background: #e0e0e0;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tone-adjuster-result {
+  background: #f9fafb;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.tone-adjuster-result #result-text {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.tone-adjuster-error {
+  background: #fff1f0;
+  border: 1px solid #ffa39e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.tone-adjuster-error #error-text {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cf1322;
+}
+
+#apply-btn, #reload-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 10px;
+  width: 100%;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#reload-btn {
+  background: #f97316;
+}
+
+#apply-btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+#reload-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+.tone-adjuster-loading {
+  text-align: center;
+  padding: 12px;
+  font-style: italic;
+  color: #888;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Optional nice scrollbar for result */
+.tone-adjuster-result::-webkit-scrollbar {
+  width: 6px;
+}
+.tone-adjuster-result::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
